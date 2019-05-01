@@ -69,7 +69,7 @@ type VolumeBackend interface {
 	Create(ctx context.Context, name, driverName string, opts ...volumeopts.CreateOption) (*types.Volume, error)
 }
 
-// ImageBackend is used by an executor to perform image operations
+// 执行程序使用ImageBackend来执行image操作
 type ImageBackend interface {
 	PullImage(ctx context.Context, image, tag string, platform *specs.Platform, metaHeaders map[string][]string, authConfig *types.AuthConfig, outStream io.Writer) error
 	GetRepository(context.Context, reference.Named, *types.AuthConfig) (distribution.Repository, bool, error)
